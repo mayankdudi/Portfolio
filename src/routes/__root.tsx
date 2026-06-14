@@ -81,14 +81,56 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Lovable App" },
-        { name: "description", content: "Lovable Generated Project" },
-        { name: "author", content: "Lovable" },
-        { property: "og:title", content: "Lovable App" },
-        { property: "og:description", content: "Lovable Generated Project" },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary" },
-        { name: "twitter:site", content: "@Lovable" },
+
+        // SEO
+        { title: "Mayank Kumar | Full Stack Engineer & AI Specialist" },
+        {
+          name: "description",
+          content:
+            "Mayank Kumar is a Full Stack Engineer & AI Specialist building scalable MERN applications, AI-powered systems, automation workflows, secure APIs, and modern digital experiences.",
+        },
+        {
+          name: "keywords",
+          content:
+            "Mayank Kumar, Full Stack Engineer, AI Specialist, React Developer, Node.js Developer, MERN Stack, MongoDB, OpenAI, LangChain, Automation",
+        },
+        { name: "author", content: "Mayank Kumar" },
+
+        // Google Search Console (verification code add karna ho to yaha)
+        // {
+        //   name: "google-site-verification",
+        //   content: "YOUR_VERIFICATION_CODE",
+        // },
+
+        // Open Graph
+        {
+          property: "og:title",
+          content: "Mayank Kumar | Full Stack Engineer & AI Specialist",
+        },
+        {
+          property: "og:description",
+          content:
+            "Building scalable web applications, AI-powered systems, automation workflows, and modern user experiences.",
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+
+        // Twitter
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:title",
+          content: "Mayank Kumar | Full Stack Engineer & AI Specialist",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Full Stack Engineer specializing in MERN Stack, AI applications, APIs, and automation solutions.",
+        },
       ],
       links: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
