@@ -1803,32 +1803,40 @@ function ContactModal({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[60] flex items-center justify-center p-4"
+          className="
+            fixed inset-0 z-[60]
+            flex items-center justify-center
+            p-3 sm:p-4 md:p-6
+          "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
+          {/* Overlay */}
           <motion.div
             className="absolute inset-0 bg-ink/70 backdrop-blur-sm"
             onClick={onClose}
           />
 
+          {/* Modal */}
           <motion.div
             role="dialog"
             aria-modal="true"
             className="
-    relative
-    z-10
-    w-full
-    max-w-2xl
-    overflow-hidden
-    rounded-[32px]
-    border
-    border-white/10
-    bg-background/95
-    backdrop-blur-xl
-    shadow-[0_20px_80px_rgba(0,0,0,0.2)]
-  "
+              relative
+              z-10
+              w-full
+              max-w-2xl
+              max-h-[90vh]
+              overflow-y-auto
+              rounded-[24px]
+              md:rounded-[32px]
+              border
+              border-white/10
+              bg-background/95
+              backdrop-blur-xl
+              shadow-[0_20px_80px_rgba(0,0,0,0.2)]
+            "
             initial={{ y: 40, opacity: 0, scale: 0.96 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 20, opacity: 0, scale: 0.98 }}
@@ -1837,18 +1845,27 @@ function ContactModal({
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <div className="flex items-start justify-between border-b border-border/50 px-8 py-8">
+            {/* Header */}
+            <div
+              className="
+                flex items-start justify-between
+                border-b border-border/50
+                px-5 py-5
+                sm:px-6 sm:py-6
+                md:px-8 md:py-8
+              "
+            >
               <div>
                 <div className="mb-3 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                   <span className="h-px w-8 bg-foreground/30" />
                   <span>Get in touch</span>
                 </div>
 
-                <h4 className="font-display text-5xl leading-[0.9] tracking-tight">
+                <h4 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[0.9] tracking-tight">
                   Let's <span className="italic font-normal">create.</span>
                 </h4>
 
-                <p className="mt-3 text-sm text-muted-foreground">
+                <p className="mt-3 text-sm md:text-base text-muted-foreground">
                   Tell me about your project and I'll get back to you.
                 </p>
               </div>
@@ -1857,20 +1874,34 @@ function ContactModal({
                 type="button"
                 onClick={onClose}
                 className="
-      flex h-12 w-12 items-center justify-center
-      rounded-full
-      border border-border
-      transition-all duration-300
-      hover:rotate-90
-      hover:bg-ink
-      hover:text-cream
-    "
+                  flex
+                  h-10 w-10
+                  md:h-12 md:w-12
+                  items-center
+                  justify-center
+                  rounded-full
+                  border border-border
+                  transition-all duration-300
+                  hover:rotate-90
+                  hover:bg-ink
+                  hover:text-cream
+                "
               >
                 ✕
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6 px-8 py-8">
+            {/* Form */}
+            <form
+              onSubmit={handleSubmit}
+              className="
+                space-y-5
+                px-5 py-5
+                sm:px-6 sm:py-6
+                md:px-8 md:py-8
+              "
+            >
+              {/* Name */}
               <div>
                 <label className="mb-2 block text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                   Name
@@ -1880,23 +1911,27 @@ function ContactModal({
                   type="text"
                   required
                   value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="
-    w-full
-    rounded-2xl
-    border border-border
-    bg-background/60
-    px-5 py-4
-    text-lg
-    outline-none
-    transition-all duration-300
-    focus:border-foreground/30
-    focus:bg-background
-  "
+                  onChange={(e) =>
+                    setForm({ ...form, name: e.target.value })
+                  }
                   placeholder="Your name"
+                  className="
+                    w-full
+                    rounded-xl md:rounded-2xl
+                    border border-border
+                    bg-background/60
+                    px-4 py-3
+                    md:px-5 md:py-4
+                    text-base md:text-lg
+                    outline-none
+                    transition-all duration-300
+                    focus:border-foreground/30
+                    focus:bg-background
+                  "
                 />
               </div>
 
+              {/* Email */}
               <div>
                 <label className="mb-2 block text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                   Email
@@ -1906,89 +1941,106 @@ function ContactModal({
                   type="email"
                   required
                   value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="
-    w-full
-    rounded-2xl
-    border border-border
-    bg-background/60
-    px-5 py-4
-    text-lg
-    outline-none
-    transition-all duration-300
-    focus:border-foreground/30
-    focus:bg-background
-  "
+                  onChange={(e) =>
+                    setForm({ ...form, email: e.target.value })
+                  }
                   placeholder="you@email.com"
+                  className="
+                    w-full
+                    rounded-xl md:rounded-2xl
+                    border border-border
+                    bg-background/60
+                    px-4 py-3
+                    md:px-5 md:py-4
+                    text-base md:text-lg
+                    outline-none
+                    transition-all duration-300
+                    focus:border-foreground/30
+                    focus:bg-background
+                  "
                 />
               </div>
 
+              {/* Message */}
               <div>
                 <label className="mb-2 block text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                   Message
                 </label>
 
                 <textarea
-                  rows={5}
+                  rows={4}
                   required
                   value={form.message}
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
                   }
-                  className="
-    w-full
-    resize-none
-    rounded-2xl
-    border border-border
-    bg-background/60
-    px-5 py-4
-    text-lg
-    outline-none
-    transition-all duration-300
-    focus:border-foreground/30
-    focus:bg-background
-  "
                   placeholder="Tell me about your project..."
+                  className="
+                    w-full
+                    resize-none
+                    rounded-xl md:rounded-2xl
+                    border border-border
+                    bg-background/60
+                    px-4 py-3
+                    md:px-5 md:py-4
+                    text-base md:text-lg
+                    outline-none
+                    transition-all duration-300
+                    focus:border-foreground/30
+                    focus:bg-background
+                  "
                 />
               </div>
 
-              {error && <p className="text-sm text-red-500">{error}</p>}
+              {/* Error */}
+              {error && (
+                <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-600">
+                  {error}
+                </div>
+              )}
 
+              {/* Success */}
               {sent && (
-                <div className="rounded-2xl border border-green-200 bg-green-50 p-4 text-center text-green-700">
+                <div className="rounded-xl border border-green-200 bg-green-50 p-4 text-center text-green-700">
                   Message sent successfully ✓
                 </div>
               )}
+
+              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={loading}
                 className="
-    group
-    flex
-    w-full
-    items-center
-    justify-center
-    gap-3
-    rounded-full
-    bg-ink
-    px-8
-    py-5
-    text-sm
-    uppercase
-    tracking-[0.2em]
-    text-cream
-    transition-all
-    duration-500
-    hover:scale-[1.02]
-    disabled:opacity-50
-  "
+                  group
+                  flex
+                  w-full
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-full
+                  bg-ink
+                  px-6
+                  py-4
+                  md:px-8
+                  md:py-5
+                  text-xs
+                  md:text-sm
+                  uppercase
+                  tracking-[0.18em]
+                  text-cream
+                  transition-all
+                  duration-500
+                  hover:scale-[1.02]
+                  hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)]
+                  disabled:opacity-50
+                "
               >
                 <span>
                   {loading
                     ? "Sending..."
                     : sent
-                      ? "Message Sent ✓"
-                      : "Send Message"}
+                    ? "Message Sent ✓"
+                    : "Send Message"}
                 </span>
 
                 <span className="transition-transform duration-500 group-hover:translate-x-1">
