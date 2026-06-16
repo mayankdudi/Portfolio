@@ -9,7 +9,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import { Menu, X,ArrowUp  } from "lucide-react";
+import { Menu, X, ArrowUp } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import Lenis from "lenis";
 import portrait from "@/assets/mayank-portrait.png";
@@ -18,7 +18,7 @@ import projectComplaint from "@/assets/project-complaint.jpg";
 import ws1 from "@/assets/workstation-1.jpg";
 import ws2 from "@/assets/workstation-2.jpg";
 import ws3 from "@/assets/workstation-3.jpg";
-import {supabase} from "../lib/supabase"
+import { supabase } from "../lib/supabase";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,6 +37,12 @@ export const Route = createFileRoute("/")({
           "Mayank Kumar, Full Stack Engineer, AI Specialist, React Developer, Node.js Developer, MERN Stack, MongoDB, OpenAI, LangChain, Automation",
       },
       {
+        name: "robots",
+        content: "index, follow",
+      },
+
+      // Open Graph
+      {
         property: "og:title",
         content: "Mayank Kumar | Full Stack Engineer & AI Specialist",
       },
@@ -45,8 +51,45 @@ export const Route = createFileRoute("/")({
         content:
           "Building scalable web applications, AI-powered systems, automation workflows, and modern user experiences.",
       },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: "https://mayank-portfolio-skill.netlify.app/",
+      },
+      {
+        property: "og:image",
+        content: "https://mayank-portfolio-skill.netlify.app/og-image.png",
+      },
+
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: "Mayank Kumar | Full Stack Engineer & AI Specialist",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Full Stack Engineer specializing in MERN Stack, AI applications, APIs, and automation solutions.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://mayank-portfolio-skill.netlify.app/og-image.png",
+      },
     ],
-       links: [
+
+    links: [
+      {
+        rel: "canonical",
+        href: "https://mayank-portfolio-skill.netlify.app/",
+      },
+
       {
         rel: "icon",
         href: "/favicon.ico",
@@ -73,6 +116,7 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
+
   component: Index,
 });
 
@@ -378,22 +422,19 @@ function Index() {
           </div>
         </div>
       </section>
-<About />
-<Services />
-<Projects />
-<Skills />
-<Workstation />
+      <About />
+      <Services />
+      <Projects />
+      <Skills />
+      <Workstation />
 
-<Contact onContact={() => setContactOpen(true)} />
+      <Contact onContact={() => setContactOpen(true)} />
 
-<Footer />
+      <Footer />
 
-<ScrollToTopButton />
+      <ScrollToTopButton />
 
-<ContactModal
-  open={contactOpen}
-  onClose={() => setContactOpen(false)}
-/>
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </div>
   );
 }
@@ -1067,8 +1108,6 @@ function Footer() {
   );
 }
 
-
-
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
 
@@ -1098,10 +1137,6 @@ function ScrollToTopButton() {
     </button>
   );
 }
-
-
-
-
 
 /* -------------------------------------------------------------------------- */
 /*  Contact Modal                                                              */

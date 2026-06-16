@@ -82,8 +82,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
 
-        // SEO
-        { title: "Mayank Kumar | Full Stack Engineer & AI Specialist" },
+        {
+          title: "Mayank Kumar | Full Stack Engineer & AI Specialist",
+        },
         {
           name: "description",
           content:
@@ -94,15 +95,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           content:
             "Mayank Kumar, Full Stack Engineer, AI Specialist, React Developer, Node.js Developer, MERN Stack, MongoDB, OpenAI, LangChain, Automation",
         },
-        { name: "author", content: "Mayank Kumar" },
+        {
+          name: "author",
+          content: "Mayank Kumar",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
 
-        // Google Search Console (verification code add karna ho to yaha)
-        // {
-        //   name: "google-site-verification",
-        //   content: "YOUR_VERIFICATION_CODE",
-        // },
-
-        // Open Graph
         {
           property: "og:title",
           content: "Mayank Kumar | Full Stack Engineer & AI Specialist",
@@ -116,8 +117,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           property: "og:type",
           content: "website",
         },
+        {
+          property: "og:url",
+          content: "https://mayank-portfolio-skill.netlify.app/",
+        },
+        {
+          property: "og:image",
+          content: "https://mayank-portfolio-skill.netlify.app/og-image.png",
+        },
 
-        // Twitter
         {
           name: "twitter:card",
           content: "summary_large_image",
@@ -131,16 +139,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           content:
             "Full Stack Engineer specializing in MERN Stack, AI applications, APIs, and automation solutions.",
         },
+        {
+          name: "twitter:image",
+          content: "https://mayank-portfolio-skill.netlify.app/og-image.png",
+        },
       ],
       links: [
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        {
+          rel: "canonical",
+          href: "https://mayank-portfolio-skill.netlify.app/",
+        },
+
+        {
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
+        },
         {
           rel: "preconnect",
           href: "https://fonts.gstatic.com",
           crossOrigin: "anonymous",
         },
 
-        // FAVICON
         {
           rel: "icon",
           type: "image/svg+xml",
@@ -185,7 +204,25 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Mayank Kumar",
+              jobTitle: "Full Stack Engineer & AI Specialist",
+              url: "https://mayank-portfolio-skill.netlify.app/",
+              sameAs: [
+                "https://github.com/mayankdudi",
+                "https://www.linkedin.com/in/mayank-dudi",
+              ],
+            }),
+          }}
+        />
       </head>
+
       <body suppressHydrationWarning>
         {children}
         <Scripts />
