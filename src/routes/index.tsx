@@ -51,32 +51,32 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Mayank Kumar | Full Stack Engineer & AI Specialist",
+        title: "Mayank Kumar | Full Stack Engineer, MERN Stack & AI Developer",
       },
       {
         name: "description",
         content:
-          "Mayank Kumar is a Full Stack Engineer & AI Specialist building scalable MERN applications, AI-powered systems, automation workflows, secure APIs, and modern digital experiences.",
+          "Mayank Kumar is a Full Stack Engineer specializing in React, Node.js, MongoDB, MERN Stack, AI-powered applications, automation workflows, and scalable web solutions.",
       },
       {
         name: "keywords",
         content:
-          "Mayank Kumar, Full Stack Engineer, AI Specialist, React Developer, Node.js Developer, MERN Stack, MongoDB, OpenAI, LangChain, Automation",
+          "Mayank Kumar, Mayank Dudi, Full Stack Engineer, MERN Stack Developer, React Developer, Node.js Developer, MongoDB Developer, AI Developer, OpenAI, LangChain, JavaScript, TypeScript, Portfolio",
       },
       {
         name: "robots",
         content: "index, follow",
       },
 
-      // Open Graph
       {
         property: "og:title",
-        content: "Mayank Kumar | Full Stack Engineer & AI Specialist",
+        content:
+          "Mayank Kumar | Full Stack Engineer, MERN Stack & AI Developer",
       },
       {
         property: "og:description",
         content:
-          "Building scalable web applications, AI-powered systems, automation workflows, and modern user experiences.",
+          "Building scalable web applications, AI-powered systems, automation workflows, and modern digital experiences.",
       },
       {
         property: "og:type",
@@ -84,21 +84,21 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:url",
-        content: "https://mayank-portfolio-skill.netlify.app/",
+        content: "https://mayank-portfolio-silk.vercel.app/",
       },
       {
         property: "og:image",
-        content: "https://mayank-portfolio-skill.netlify.app/og-image.png",
+        content: "https://mayank-portfolio-silk.vercel.app/og-image.png",
       },
 
-      // Twitter
       {
         name: "twitter:card",
         content: "summary_large_image",
       },
       {
         name: "twitter:title",
-        content: "Mayank Kumar | Full Stack Engineer & AI Specialist",
+        content:
+          "Mayank Kumar | Full Stack Engineer, MERN Stack & AI Developer",
       },
       {
         name: "twitter:description",
@@ -107,16 +107,15 @@ export const Route = createFileRoute("/")({
       },
       {
         name: "twitter:image",
-        content: "https://mayank-portfolio-skill.netlify.app/og-image.png",
+        content: "https://mayank-portfolio-silk.vercel.app/og-image.png",
       },
     ],
 
     links: [
       {
         rel: "canonical",
-        href: "https://mayank-portfolio-skill.netlify.app/",
+        href: "https://mayank-portfolio-silk.vercel.app/",
       },
-
       {
         rel: "icon",
         href: "/favicon.ico",
@@ -140,6 +139,23 @@ export const Route = createFileRoute("/")({
       {
         rel: "manifest",
         href: "/site.webmanifest",
+      },
+    ],
+
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Mayank Kumar",
+          url: "https://mayank-portfolio-silk.vercel.app/",
+          jobTitle: "Full Stack Engineer",
+          sameAs: [
+            "https://github.com/mayankdudi",
+            "https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME",
+          ],
+        }),
       },
     ],
   }),
