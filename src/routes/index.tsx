@@ -51,60 +51,106 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Mayank Kumar | Full Stack Engineer, MERN Stack & AI Developer",
+        title:
+          "Mayank Kumar | Full Stack Engineer, MERN Stack Developer & AI Engineer",
       },
+
       {
         name: "description",
         content:
-          "Mayank Kumar is a Full Stack Engineer specializing in React, Node.js, MongoDB, MERN Stack, AI-powered applications, automation workflows, and scalable web solutions.",
+          "Mayank Kumar is a Full Stack Engineer and AI Developer specializing in React, Node.js, MongoDB, MERN Stack, TypeScript, OpenAI, automation workflows, scalable web applications, APIs, and modern digital experiences.",
       },
+
       {
         name: "keywords",
         content:
-          "Mayank Kumar, Mayank Dudi, Full Stack Engineer, MERN Stack Developer, React Developer, Node.js Developer, MongoDB Developer, AI Developer, OpenAI, LangChain, JavaScript, TypeScript, Portfolio",
+          "Mayank Kumar, Mayank Dudi, Full Stack Engineer, MERN Stack Developer, React Developer, Node.js Developer, MongoDB Developer, Express.js Developer, JavaScript Developer, TypeScript Developer, AI Developer, OpenAI Developer, LangChain Developer, Web Developer India, Portfolio Website",
       },
+
+      {
+        name: "author",
+        content: "Mayank Kumar",
+      },
+
       {
         name: "robots",
+        content: "index, follow, max-image-preview:large",
+      },
+
+      {
+        name: "googlebot",
         content: "index, follow",
+      },
+
+      {
+        name: "theme-color",
+        content: "#0f172a",
+      },
+
+      {
+        property: "og:type",
+        content: "website",
       },
 
       {
         property: "og:title",
         content:
-          "Mayank Kumar | Full Stack Engineer, MERN Stack & AI Developer",
+          "Mayank Kumar | Full Stack Engineer, MERN Stack Developer & AI Engineer",
       },
+
       {
         property: "og:description",
         content:
-          "Building scalable web applications, AI-powered systems, automation workflows, and modern digital experiences.",
+          "Building scalable web applications, AI-powered solutions, automation systems, REST APIs, and modern digital products.",
       },
-      {
-        property: "og:type",
-        content: "website",
-      },
+
       {
         property: "og:url",
         content: "https://mayank-portfolio-silk.vercel.app/",
       },
+
+      {
+        property: "og:site_name",
+        content: "Mayank Kumar Portfolio",
+      },
+
       {
         property: "og:image",
         content: "https://mayank-portfolio-silk.vercel.app/og-image.png",
       },
 
       {
+        property: "og:image:width",
+        content: "1200",
+      },
+
+      {
+        property: "og:image:height",
+        content: "630",
+      },
+
+      {
+        property: "og:locale",
+        content: "en_US",
+      },
+
+      {
         name: "twitter:card",
         content: "summary_large_image",
       },
+
       {
         name: "twitter:title",
         content:
-          "Mayank Kumar | Full Stack Engineer, MERN Stack & AI Developer",
+          "Mayank Kumar | Full Stack Engineer, MERN Stack Developer & AI Engineer",
       },
+
       {
         name: "twitter:description",
         content:
-          "Full Stack Engineer specializing in MERN Stack, AI applications, APIs, and automation solutions.",
+          "React, Node.js, MongoDB, MERN Stack, AI Applications, OpenAI Integrations, Automation Workflows, and Scalable Web Solutions.",
       },
+
       {
         name: "twitter:image",
         content: "https://mayank-portfolio-silk.vercel.app/og-image.png",
@@ -116,26 +162,17 @@ export const Route = createFileRoute("/")({
         rel: "canonical",
         href: "https://mayank-portfolio-silk.vercel.app/",
       },
+
       {
         rel: "icon",
         href: "/favicon.ico",
       },
-      {
-        rel: "icon",
-        type: "image/png",
-        sizes: "32x32",
-        href: "/favicon-32x32.png",
-      },
-      {
-        rel: "icon",
-        type: "image/png",
-        sizes: "16x16",
-        href: "/favicon-16x16.png",
-      },
+
       {
         rel: "apple-touch-icon",
         href: "/apple-touch-icon.png",
       },
+
       {
         rel: "manifest",
         href: "/site.webmanifest",
@@ -149,12 +186,49 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Mayank Kumar",
+          alternateName: "Mayank Dudi",
           url: "https://mayank-portfolio-silk.vercel.app/",
+          image:
+            "https://mayank-portfolio-silk.vercel.app/og-image.png",
           jobTitle: "Full Stack Engineer",
+          description:
+            "Full Stack Engineer specializing in MERN Stack, AI applications, automation workflows, APIs, and scalable software solutions.",
+          alumniOf: {
+            "@type": "CollegeOrUniversity",
+            name: "University",
+          },
+          knowsAbout: [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Express.js",
+            "JavaScript",
+            "TypeScript",
+            "OpenAI",
+            "LangChain",
+            "AI Development",
+            "Web Development",
+          ],
           sameAs: [
             "https://github.com/mayankdudi",
-            "https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME",
+            "https://www.linkedin.com/in/mayank-dudi/",
           ],
+        }),
+      },
+
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Mayank Kumar Portfolio",
+          url: "https://mayank-portfolio-silk.vercel.app/",
+          potentialAction: {
+            "@type": "SearchAction",
+            target:
+              "https://mayank-portfolio-silk.vercel.app/?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
         }),
       },
     ],
@@ -162,7 +236,6 @@ export const Route = createFileRoute("/")({
 
   component: Index,
 });
-
 /* -------------------------------------------------------------------------- */
 /*  Smooth scroll                                                              */
 /* -------------------------------------------------------------------------- */
